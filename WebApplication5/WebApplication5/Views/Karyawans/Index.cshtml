@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApplication5.Models.Karyawan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Jenis_Kelamin)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tanggal_Lahir)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Alamat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.no_telp)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Jenis_Kelamin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tanggal_Lahir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Alamat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.no_telp)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.kd_nama }) |
+            @Html.ActionLink("Details", "Details", new { id=item.kd_nama }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.kd_nama })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TESTAPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Karyawan">
+          <Key>
+            <PropertyRef Name="kd_nama" />
+          </Key>
+          <Property Name="kd_nama" Type="int" Nullable="false" />
+          <Property Name="Nama" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Jenis_Kelamin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Tanggal_Lahir" Type="date" />
+          <Property Name="Alamat" Type="varchar" MaxLength="50" />
+          <Property Name="no_telp" Type="int" />
+        </EntityType>
+        <EntityContainer Name="TESTAPIModelStoreContainer">
+          <EntitySet Name="Karyawan" EntityType="Self.Karyawan" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TESTAPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Karyawan">
+          <Key>
+            <PropertyRef Name="kd_nama" />
+          </Key>
+          <Property Name="kd_nama" Type="Int32" Nullable="false" />
+          <Property Name="Nama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Jenis_Kelamin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Tanggal_Lahir" Type="DateTime" Precision="0" />
+          <Property Name="Alamat" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="no_telp" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="TESTAPIEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Karyawans" EntityType="Self.Karyawan" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TESTAPIModelStoreContainer" CdmEntityContainer="TESTAPIEntities">
+          <EntitySetMapping Name="Karyawans">
+            <EntityTypeMapping TypeName="TESTAPIModel.Karyawan">
+              <MappingFragment StoreEntitySet="Karyawan">
+                <ScalarProperty Name="kd_nama" ColumnName="kd_nama" />
+                <ScalarProperty Name="Nama" ColumnName="Nama" />
+                <ScalarProperty Name="Jenis_Kelamin" ColumnName="Jenis_Kelamin" />
+                <ScalarProperty Name="Tanggal_Lahir" ColumnName="Tanggal_Lahir" />
+                <ScalarProperty Name="Alamat" ColumnName="Alamat" />
+                <ScalarProperty Name="no_telp" ColumnName="no_telp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

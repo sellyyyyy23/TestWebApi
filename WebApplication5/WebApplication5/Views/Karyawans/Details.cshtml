@@ -1,0 +1,58 @@
+﻿@model WebApplication5.Models.Karyawan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Karyawan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Jenis_Kelamin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Jenis_Kelamin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tanggal_Lahir)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tanggal_Lahir)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alamat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alamat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.no_telp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.no_telp)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.kd_nama }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

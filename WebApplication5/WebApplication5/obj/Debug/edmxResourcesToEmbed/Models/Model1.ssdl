@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TESTAPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Karyawan">
+    <Key>
+      <PropertyRef Name="kd_nama" />
+    </Key>
+    <Property Name="kd_nama" Type="int" Nullable="false" />
+    <Property Name="Nama" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Jenis_Kelamin" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Tanggal_Lahir" Type="date" />
+    <Property Name="Alamat" Type="varchar" MaxLength="50" />
+    <Property Name="no_telp" Type="int" />
+  </EntityType>
+  <EntityContainer Name="TESTAPIModelStoreContainer">
+    <EntitySet Name="Karyawan" EntityType="Self.Karyawan" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
